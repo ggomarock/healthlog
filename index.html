@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>헬스로그</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="헬스로그">
+<meta name="theme-color" content="#0c0e13">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="view"></div>
+
+<!-- 휴식 타이머 -->
+<div id="rest" class="t-work">
+  <svg width="48" height="48" viewBox="0 0 48 48" style="transform:rotate(-90deg);flex:none">
+    <circle cx="24" cy="24" r="20" fill="none" stroke="#2a2f3b" stroke-width="5"/>
+    <circle class="rbar" cx="24" cy="24" r="20" fill="none" stroke="#6d7dff" stroke-width="5" stroke-linecap="round"
+      stroke-dasharray="125.66" stroke-dashoffset="0" style="transition:stroke-dashoffset .25s linear"/>
+  </svg>
+  <div class="tm num">00:00<small>휴식 중</small></div>
+  <button onclick="adjRest(-15)">−15</button>
+  <button onclick="adjRest(15)">+15</button>
+  <button class="rx" onclick="stopRest()" aria-label="휴식 종료"></button>
+</div>
+
+<nav>
+  <button data-t="home" onclick="tab('home')"><span></span>홈</button>
+  <button data-t="workout" onclick="tab('workout')"><span></span>운동</button>
+  <button data-t="diet" onclick="tab('diet')"><span></span>식단</button>
+  <button data-t="body" onclick="tab('body')"><span></span>체중</button>
+  <button data-t="analysis" onclick="tab('analysis')"><span></span>분석</button>
+  <button data-t="manage" onclick="tab('manage')"><span></span>관리</button>
+</nav>
+<div id="toast"></div>
+<div id="snack" role="status"><span class="msg"></span><button class="act">되돌리기</button><i class="bar"></i></div>
+
+<script src="data.js"></script>
+<script src="icons.js"></script>
+<script src="ui.js"></script>
+<script src="app.js"></script>
+<script src="analysis.js"></script>
+<script src="features.js"></script>
+</body>
+</html>
